@@ -7,30 +7,44 @@
     <title>Calculator</title>
 </head>
 <body>
-    <div id="calculator">
-        <input id="display" readonly>
-        <div id="keys">
-            <button onclick="appendToDisplay('+')"class="operator">+</button>
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="appendToDisplay('-')"class="operator">-</button>
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')">5</button>
-            <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('*')"class="operator">*</button>
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="appendToDisplay('/')"class="operator">/</button>
-            <button onclick="appendToDisplay('0')">0</button>
-            <button onclick="appendToDisplay('.')">.</button>
-            <button onclick="operate()"class="operator">=</button>
-            <button onclick="clearDisplay()"class="operator">C</button>
-            
+    <h1>Calculator</h1>
+    
+    <div class="calculator">
+        
+        <div class="firstrow">
+            <div class="screen"></div>
+            <button class="clear">C</button>
         </div>
+        
+        <div class="secondrow">
+            <button class="numbers">7</button>
+            <button class="numbers">8</button>
+            <button class="numbers">9</button>
+            <button class="operator">/</button>
+        </div>
+
+        <div class="thirdrow">
+            <button class="numbers">4</button>
+            <button class="numbers">5</button>
+            <button class="numbers">6</button>
+            <button class="operator">×</button>
+        </div>
+
+        <div class="fourthrow">
+            <button class="numbers">1</button>
+            <button class="numbers">2</button>
+            <button class="numbers">3</button>
+            <button class="operator">-</button>
+        </div>
+
+        <div class="fifthrow">
+            <button class="decimal">.</button>
+            <button class="numbers">0</button>
+            <button class="equal">=</button>
+            <button class="operator">+</button>
+        </div>
+
     </div>
-<script src="script.js"></script>
     
 </body>
 </html>
