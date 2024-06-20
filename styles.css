@@ -7,6 +7,7 @@
 
 body {
     background-color: gold;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,9 +33,12 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    font-size: 40px;
+    font-size: 60px;
     padding: 20px;
     border-radius: 4px;
+    word-break: break-all;
+    word-wrap: break-word;
+    
 }
 
 .calculator button {
@@ -47,7 +51,7 @@ body {
 }
 
 .calculator button:hover {
-    background-color: #fdd55c;
+    background-color: #fde089;
 }
 
 .calculator button:active {
@@ -60,7 +64,7 @@ body {
 }
 
 button.operator { 
-    background-color: red;
+    background-color: rgb(241, 92, 92);
 }
 
 
