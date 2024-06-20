@@ -47,15 +47,20 @@ body {
 }
 
 .calculator button:hover {
-    background: rgb(240, 65, 65);
+    background-color: #fdd55c;
 }
 
 .calculator button:active {
-    background: rgb(134, 49, 49);
+    background-color: #ffbf00;
+    
 }
 
 .span-two {
     grid-column: span 2;
+}
+
+button.operator { 
+    background-color: red;
 }
 
 
