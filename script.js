@@ -16,9 +16,6 @@ let previousOperand = 0;
 
 //Function to append number
 const appendNumber = (number) => {
-    if (result.length >= 12 ) {
-        return; 
-    }
     if (number === '.' && result.includes('.')) {
         return;
     }
@@ -62,6 +59,13 @@ const calculateResult = () => {
             evaluatedResult = prev * current;
             break;
         case'÷':
+        if (current === 0) {
+            result = 'undefined';
+            operation = '';
+            previousOperand = '';
+            updateDisplay();
+            return;
+        }
             evaluatedResult = prev / current;
             break;
         default:
@@ -109,6 +113,59 @@ clearBtn.addEventListener('click', () => {
     updateDisplay();
 
 })
+
+// Function to handle keyboard events
+const handleKeyPress = (event) => {
+    const key = event.key;
+    switch (key) {
+        case '0':
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+            appendNumber(key);
+            break;
+        case '.':
+            appendNumber('.');
+            break;
+        case '+':
+            selectOperator('+');
+            break;
+        case '-':
+            selectOperator('-');
+            break;
+        case '*':
+            selectOperator('*');
+            break;
+        case '/':
+            selectOperator('÷'); // Use '÷' for divide button
+            break;
+        case '=':
+        case 'Enter':
+            if (result !== '') {
+                calculateResult();
+                updateDisplay();
+            }
+            break;
+        case 'Backspace':
+            deleteBtn.click(); // Trigger delete button click
+            break;
+        case 'Escape':
+            clearBtn.click(); // Trigger clear button click
+            break;
+        default:
+            // Handle other keys if needed
+            break;
+    }
+};
+
+// Attach keyboard event listener to the document
+document.addEventListener('keydown', handleKeyPress);
 
 
 //Function to update display

@@ -28,7 +28,6 @@ body {
 }
 
 .calculator .output {
-    line-height: 0px;
     background-color: rgb(23, 230, 23);
     grid-column: 1/5;
     color: black;
@@ -38,7 +37,8 @@ body {
     font-size: 60px;
     padding: 20px;
     border-radius: 4px;
-    padding-top: 50px;
+    word-wrap: break-word;
+    word-break: break-all;
     
 }
 
