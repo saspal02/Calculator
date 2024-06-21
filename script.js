@@ -16,6 +16,9 @@ let previousOperand = 0;
 
 //Function to append number
 const appendNumber = (number) => {
+    if (result.length >= 12 ) {
+        return; 
+    }
     if (number === '.' && result.includes('.')) {
         return;
     }
@@ -88,10 +91,15 @@ equalBtn.addEventListener('click', () => {
     updateDisplay();
 })
 deleteBtn.addEventListener('click', () => {
-    if (result === '') return;
-    result = result.slice(0,-1);
-    updateDisplay();
-
+    if (operation !== "" && result === "") {
+        operation = "";
+        result = previousOperand;
+        previousOperand = "";
+        updateDisplay();
+    } else {
+        result = result.slice(0, -1);
+        updateDisplay();
+    }
 })
 
 clearBtn.addEventListener('click', () => {
